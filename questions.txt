@@ -10,10 +10,17 @@
    a. x, y = "hello", "hello"
    b. x = y = "hello"
 
+   No, because the "b" example is the value of x is pointing to the value of y, but the "a" example is explicitly assigning the value to both at the same time.
+
 5. What is the difference between a Range and an Array?
+A range is a sequence of values in a progressive order (ie. 1-10, a-z) with either an inclusive (..) or exclusive (...) range. A range can also be used as a condition or An array does not have to be in a particular order or progression, but is simply assigned by index position.
+
 
 6. Why would I use a Hash instead of an Array?
+Hash is best used when you need a key, value pair. Like, for example, you want to set up a library program and you need to pair the book title with an ISBN number. An array is a good container to simply hold values.
 
 7. What is your favorite thing about Ruby so far?
+It seems to be very elegant and more intuitive than other programming languages.
 
 8. What is your least favorite thing about Ruby so far?
+The shortcuts. It's hard to find documentation on why or what the community shortcuts are, but people seem to know them. 
