@@ -1,20 +1,19 @@
- 1. What are the three uses of the curly brackets {} in Ruby?
- Curly brackets are used for calling blocks, setting up hashes and string interpolation.
+1. What are the three uses of the curly brackets {} in Ruby?
+Curly brackets are used for calling blocks, setting up hashes and string interpolation.
 
- 2. What is a regular expression and what is a common use for them?
- Regular expression is used for pattern recognition in strings. You use them to test a string, extract a string or change a string. Often used for phone numbers, zip codes, credit card numbers, etc.
+2. What is a regular expression and what is a common use for them?
+Regular expression is used for pattern recognition in strings. You use them to test a string, extract a string or change a string. Often used for phone numbers, zip codes, credit card numbers, etc.
  
- 3. What is the difference between how a String, a symbol, a FixNum, and a Float are stored in Ruby?
- 
- 4. Are these two statements equivalent? Why or Why Not?
-   a. x, y = "hello", "hello"
-   b. x = y = "hello"
+3. What is the difference between how a String, a symbol, a FixNum, and a Float are stored in Ruby?
+A string is stored with quote marks, a symbol is stored with a colo, a FixNum is stored without any demarkation and a float is stored with a decimal.
 
-   No, because the "b" example is the value of x is pointing to the value of y, but the "a" example is explicitly assigning the value to both at the same time.
+4. Are these two statements equivalent? Why or Why Not?
+  a. x, y = "hello", "hello"
+  b. x = y = "hello"
+No, because the "b" example is the value of x is pointing to the value of y, but the "a" example is explicitly assigning the value to both at the same time.
 
 5. What is the difference between a Range and an Array?
 A range is a sequence of values in a progressive order (ie. 1-10, a-z) with either an inclusive (..) or exclusive (...) range. A range can also be used as a condition or An array does not have to be in a particular order or progression, but is simply assigned by index position.
-
 
 6. Why would I use a Hash instead of an Array?
 Hash is best used when you need a key, value pair. Like, for example, you want to set up a library program and you need to pair the book title with an ISBN number. An array is a good container to simply hold values.
