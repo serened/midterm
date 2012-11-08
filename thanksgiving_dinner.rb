@@ -1,5 +1,5 @@
 module Dinner
-attr_accessor :diet, :menu
+attr_accessor :diet, :guests
 
 	def initialize(diet)
 		@diet = diet
@@ -9,32 +9,45 @@ attr_accessor :diet, :menu
 		@diet
 	end
 
-	def menu 
+	def guests
+		@guests = guests
+	end
+
+	def seating_chart_size
+		seating_chart_size.inject{print guests.to_s.length } 
+	end
+end
+
+module Menu
+	attr_accessor :proteins, :veggies
+
+	def initialize
+		@proteins = proteins
+		@veggies = veggies
 	end
 	
-	#def food_list
-	#end
+	def foods
+		@proteins = ["Tofurkey", "Hummus"]
+		@veggies = [:ginger_carrots ,:potatoes, :yams].map{|v| v.to_s.capitalize }
+	end
+	
+	def whats_for_dinner
+		puts "Tonight we have proteins #{@proteins} and veggies #{@veggies}."		
+	end
 end
 
 class ThanksgivingDinner
 	include Dinner
-	
-	attr_accessor :guests, :seating_chart_size, :proteins, :veggies
+	include Menu
 
-	def initialize(guests)
-		@guests = guests
-		@seating_chart_size = seating_chart_size
-		@proteins = proteins
-		@veggies = veggies
-	end
+	#attr_accessor :desserts
 
-	def guests
-		@guests.to_s.length
-	end
-
-	#def seating_chart_size(guests)
-	#	guests.to_s.inject{:+}
-	##	guests.inject{:+}
+	#def initialize
+	#	@desserts = desserts
 	#end
+
+	#def menu
+	#	@desserts = {:pies => [:pumkin_pie], :other => ["Chocolate Moose"], :molds => [:cranberry, :mango, :cherry]}.map { |d, t| vs.map { |d| [k, v] } }.flatten(1)
+	#end	
 
 end

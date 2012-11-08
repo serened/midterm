@@ -6,7 +6,7 @@ describe Turkey do
     @turkey = Turkey.new(10)
   end
   
-  it "should report the turkey weight" do
+    it "should report the turkey weight" do
     @turkey.weight.should equal 10
   end
   

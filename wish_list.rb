@@ -7,9 +7,13 @@ def initialize
 	@wishes = wishes
 end
 
+def list
+	list = (1..5).to_a
+	wishes.zip(list,wishes)
+end
+
 def map
-	[].each {|w| ids_w[w] = wish_list}
-	list.collect{ |w| ids_w[w]}
+	wishes.map{|w| w}
 end
 
 end
