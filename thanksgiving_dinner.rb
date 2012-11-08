@@ -3,6 +3,7 @@ attr_accessor :diet, :guests
 
 	def initialize(diet)
 		@diet = diet
+		@guests = guests
 	end
 
 	def diet
@@ -10,11 +11,11 @@ attr_accessor :diet, :guests
 	end
 
 	def guests
-		@guests = guests.to_s.size
+		@guests
 	end
 
 	def seating_chart_size
-		seating_chart_size.inject{:guests.to_s.size} 
+		guests.inject(0){|memo,name| memo+name.size} 
 	end
 end
 
@@ -28,14 +29,14 @@ module Menu
 	
 	def menu
 	end
-	
+
 	#def foods
 	#	@proteins = ["Tofurkey", "Hummus"]
 	#	@veggies = [:ginger_carrots ,:potatoes, :yams].map{|v| v.to_s.capitalize }
 	#end
 	
 	#def whats_for_dinner
-		puts "Tonight we have proteins #{@proteins} and veggies #{@veggies}."		
+	#	puts "Tonight we have proteins #{@proteins} and veggies #{@veggies}."		
 	#end
 end
 
@@ -49,8 +50,9 @@ class ThanksgivingDinner
 	#	@desserts = desserts
 	#end
 
-	#def menu
-	#	@desserts = {:pies => [:pumkin_pie], :other => ["Chocolate Moose"], :molds => [:cranberry, :mango, :cherry]}.map { |d, t| vs.map { |d| [k, v] } }.flatten(1)
-	#end	
+	def menu
+		super
+		@desserts = {:pies => [:pumkin_pie], :other => ["Chocolate Moose"], :molds => [:cranberry, :mango, :cherry]}.map { |d, t| vs.map { |d| [k, v] } }.flatten(1)
+	end	
 
 end
