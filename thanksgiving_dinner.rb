@@ -1,15 +1,17 @@
 module Dinner
-attr_accessor :diet, :guests, :proteins, :veggies
+attr_accessor :diet, :guests, :proteins, :veggies, :desserts
 
 	def initialize(diet)
 		@diet = diet
 		@guests = guests
 		@proteins = ["Tofurkey", "Hummus"].join(' and ').insert(-1, ',')
 		@veggies = [:ginger_carrots ,:potatoes, :yams].map{|v| v.to_s.tr("_", " ").capitalize }.join(', ').sub(', Yams', ', and Yams').sub('Ginger carrots, ','Ginger Carrots, ')
+		@desserts = {:pies => [:pumkin_pie], :other => ["Chocolate Moose"], :molds => [:cranberry, :mango, :cherry]}.collect_concat{|k,v| v.to_s}.flatten
+
 	end
 
 	def diet
-		@diet
+		@diet = :vegan
 	end
 
 	def guests
@@ -21,26 +23,17 @@ attr_accessor :diet, :guests, :proteins, :veggies
 	end
 
 	def menu
-		
-	end
-
+	end	
+	
 	def whats_for_dinner
-		 "Tonight we have proteins #{@proteins} and veggies #{@veggies}."		
+		"Tonight we have proteins #{@proteins} and veggies #{@veggies}."		
+	end
+	def whats_for_dessert
+		"Tonight we have 5 delicious desserts: #{@desserts}."
 	end
 end
 
 class ThanksgivingDinner
 	include Dinner
-
-	#attr_accessor :desserts
-
-	#def initialize
-	#	@desserts = desserts
-	#end
-
-	#def menu
-	#	super
-	#	@desserts = {:pies => [:pumkin_pie], :other => ["Chocolate Moose"], :molds => [:cranberry, :mango, :cherry]}.map { |d, t| vs.map { |d| [k, v] } }.flatten(1)
-	#end	
 
 end
