@@ -8,9 +8,8 @@ def initialize
 end
 
 def map
-	list = ['1. ','2. ','3. ','4. ','5. ']
-	wishes.zip(list).map{|w| w}
-
+	list = ['1.','2.','3.','4.','5.']
+	list.zip(wishes).map{|w| w.join(' ')}
 end
 
 end
