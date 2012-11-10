@@ -1,13 +1,14 @@
 module Dinner
 
-attr_accessor :diet, :guests, :proteins, :veggies, :desserts
+attr_accessor :diet, :guests, :proteins, :veggies, :desserts, :menu 
 
 	def initialize(diet)
+		@menu = Hash.new
 		@diet = :vegan
 		@guests
 		@proteins = ["Tofurkey", "Hummus"]
 		@veggies = [:ginger_carrots ,:potatoes, :yams]
-		@desserts
+		@desserts = {:pies => [:pumkin_pie], :other => ["Chocolate Moose"], :molds => [:cranberry, :mango, :cherry]}
 	end
 
 	def guests
@@ -24,15 +25,23 @@ attr_accessor :diet, :guests, :proteins, :veggies, :desserts
 		"Tonight we have proteins #{proteins} and veggies #{veggies}."		
 	end
 	def whats_for_dessert
-		@desserts = {:pies => [:pumkin_pie], :other => ["Chocolate Moose"], :molds => [:cranberry, :mango, :cherry]}.collect_concat{|k,v| v.to_s.tr(":",'').tr("[",'').tr("]",'')}.join
+		@desserts = {:pies => [:pumkin_pie], :other => ["Chocolate Moose"], :molds => [:cranberry, :mango, :cherry]}.collect_concat{|k,v| v.to_s.tr(":",'').tr("[",'').tr("]",'').sub('"Chocolate Moose"','Chocolate Moose')}.join(', ').sub('pumkin_pie','Pumkin Pie').sub('cranberry, mango, cherry','Cranberry and Mango and Cherry').insert(-32,' and 3 molds:')
 		"Tonight we have 5 delicious desserts: #{@desserts}."
 	end
 
 	def menu
-		menu=Hash.new{|menu, diet| menu[diet] = :vegan }
-	end
-end
+		menu = {
+				:proteins => ["Tofurkey","Hummus"],
+				:diet => :vegan,
+				:veggies => [:ginger_carrots,:potatoes,:yams],
+				:desserts => {:pies => [:pumkin_pie], :other => ["Chocolate Moose"], :molds => [:cranberry, :mango, :cherry]}
+		}
+		#menu.store(:proteins, ["Tofurkey","Hummus"])
+		#menu.store(:veggies, [:ginger_carrots,:potatoes,:yams])
+  	end
+  	#menu.Hash.new{|menu, diet| menu[diet] = "Menu: #{@diet}"}
 
+end
 class ThanksgivingDinner
 	include Dinner
 end
