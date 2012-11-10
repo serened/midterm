@@ -6,7 +6,7 @@ describe Turkey do
     @turkey = Turkey.new(10)
   end
   
-    it "should report the turkey weight" do
+  it "should report the turkey weight" do
     @turkey.weight.should equal 10
   end
   
@@ -69,6 +69,6 @@ describe ThanksgivingDinner do
  end
  
  it "should return what is on the dessert menu" do
-   @t_dinner.whats_for_dessert.should eq "Tonight we have 5 delicious desserts: Pumkin Pie, Chcolate Moose, and 3 molds: Cranberry and Mango and Cherry."
+   @t_dinner.whats_for_dessert.should eq "Tonight we have 5 delicious desserts: Pumkin Pie, Chocolate Moose, and 3 molds: Cranberry and Mango and Cherry."
  end
 end

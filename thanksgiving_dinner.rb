@@ -40,7 +40,6 @@ attr_accessor :diet, :guests, :proteins, :veggies, :desserts, :menu
 		#menu.store(:veggies, [:ginger_carrots,:potatoes,:yams])
   	end
   	#menu.Hash.new{|menu, diet| menu[diet] = "Menu: #{@diet}"}
-
 end
 class ThanksgivingDinner
 	include Dinner
